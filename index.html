@@ -68,25 +68,40 @@
                     <p>To anyone who took the trouble of reading through this block of text, I hope you have a wonderful day :) </p>
                 </div>
                 
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-full="assets/images/gallery1-full.jpg">
-                        <img src="assets/images/gallery1-thumb.jpg" alt="Gallery Image 1">
+                <!-- Replace the gallery grid with slideshow -->
+                <div class="slideshow-container">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery1-thumb.jpg" alt="Gallery Image 1" data-full="assets/images/gallery1-full.jpg">
                     </div>
-                    <div class="gallery-item" data-full="assets/images/gallery2-full.jpg">
-                        <img src="assets/images/gallery2-thumb.jpg" alt="Gallery Image 2">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery2-thumb.jpg" alt="Gallery Image 2" data-full="assets/images/gallery2-full.jpg">
                     </div>
-                    <div class="gallery-item" data-full="assets/images/gallery3-full.jpg">
-                        <img src="assets/images/gallery3-thumb.jpg" alt="Gallery Image 3">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery3-thumb.jpg" alt="Gallery Image 3" data-full="assets/images/gallery3-full.jpg">
                     </div>
-                    <div class="gallery-item" data-full="assets/images/gallery4-full.jpg">
-                        <img src="assets/images/gallery4-thumb.jpg" alt="Gallery Image 4">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery4-thumb.jpg" alt="Gallery Image 4" data-full="assets/images/gallery4-full.jpg">
                     </div>
-                    <div class="gallery-item" data-full="assets/images/gallery5-full.jpg">
-                        <img src="assets/images/gallery5-thumb.jpg" alt="Gallery Image 5">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery5-thumb.jpg" alt="Gallery Image 5" data-full="assets/images/gallery5-full.jpg">
                     </div>
-                    <div class="gallery-item" data-full="assets/images/gallery6-full.jpg">
-                        <img src="assets/images/gallery6-thumb.jpg" alt="Gallery Image 6">
+                    <div class="slides fade">
+                        <img src="assets/images/gallery6-thumb.jpg" alt="Gallery Image 6" data-full="assets/images/gallery6-full.jpg">
                     </div>
+                    
+                    <!-- Navigation arrows -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <!-- Dots/circles -->
+                <div class="dots-container" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
                 </div>
             </div>
             

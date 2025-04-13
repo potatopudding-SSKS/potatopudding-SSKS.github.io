@@ -395,4 +395,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run animation on load and scroll
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
+    
+    // Slideshow functionality
+    let slideIndex = 1;
+
+    // Initialize slideshow on page load
+    showSlides(slideIndex);
+    // Auto advance slides every 4 seconds
+    setInterval(function() {
+        plusSlides(1);
+    }, 4000);
 });
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    
+    // Hide all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    // Remove active class from all dots
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+    }
+    
+    // Show the current slide and activate corresponding dot
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active-dot";
+    
+    // Make sure lightbox functionality works with the slideshow
+    const slideImages = document.querySelectorAll('.slides img');
+    slideImages.forEach(img => {
+        img.addEventListener('click', function() {
+            showLightbox(this.getAttribute('data-full'), this.alt);
+        });
+    });
+}
