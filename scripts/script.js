@@ -395,55 +395,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run animation on load and scroll
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
-    
-    // Slideshow functionality
-    let slideIndex = 1;
-
-    // Initialize slideshow on page load
-    showSlides(slideIndex);
-    // Auto advance slides every 4 seconds
-    setInterval(function() {
-        plusSlides(1);
-    }, 4000);
 });
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
+// Simplified slideshow code - auto-only with no manual controls
+let slideIndex = 0;
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Start the slideshow
+    showSlides();
+});
 
-function showSlides(n) {
+// Auto slideshow without manual controls
+function showSlides() {
     let i;
     let slides = document.getElementsByClassName("slides");
-    let dots = document.getElementsByClassName("dot");
-    
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
     
     // Hide all slides
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     
-    // Remove active class from all dots
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active-dot", "");
+    // Move to next slide
+    slideIndex++;
+    
+    // Reset to first slide when reaching the end
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
     
-    // Show the current slide and activate corresponding dot
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active-dot";
+    // Show the current slide
+    slides[slideIndex - 1].style.display = "block";
     
-    // Make sure lightbox functionality works with the slideshow
-    const slideImages = document.querySelectorAll('.slides img');
-    slideImages.forEach(img => {
-        img.addEventListener('click', function() {
-            showLightbox(this.getAttribute('data-full'), this.alt);
-        });
-    });
+    // Change image every 4 seconds
+    setTimeout(showSlides, 4000);
 }
