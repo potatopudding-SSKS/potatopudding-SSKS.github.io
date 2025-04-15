@@ -1158,13 +1158,14 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     header {
         padding: 15px 5%;
     }
     
     .menu-toggle {
         display: flex;
+        right: 15px;
     }
     
     nav {
@@ -1195,7 +1196,7 @@ footer {
     }
     
     .dark-mode-toggle {
-        right: 55px;
+        right: 60px;
         width: 32px;
         height: 32px;
     }
