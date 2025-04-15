@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Use your multilingual phrases
         const phrases = [
             "Hey there! I'm Saisankalp!",
-            "வணக்கம்! என் பெயர் சாய்சங்கல்ப்",
+            "வணக்கம்! என் பெயர் சாய்சங்கல்ப்.",
             "नमस्ते! मैं साईसंकल्प हूं।",
             "നമസ്കാരം! ഞാൻ സൈസങ്കൽപ് ആണ്.",
-            "నా పేరు సాయిసంకల్పం.",
+            "నమస్కారం! నా పేరు సాయిసంకల్ప్.",
             "Hallo! Ich bin Saisankalp!"
         ];
         
@@ -427,5 +427,5 @@ function showSlides() {
     slides[slideIndex - 1].style.display = "block";
     
     // Change image every 4 seconds
-    setTimeout(showSlides, 4000);
+    setTimeout(showSlides, 2500);
 }
